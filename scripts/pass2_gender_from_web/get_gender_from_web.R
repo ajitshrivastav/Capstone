@@ -46,5 +46,5 @@ findgender_web <- function(first_name_in, gender_in, start_index, end_index){
 
 name_csv <- read.csv("data_sets/intermediate/nm_wihout_gender.csv")
 name_csv <- name_csv %>% mutate(gender=findgender_web(nm_v, gender,1, 499))
-write.csv(name_csv, file = "data_sets/intermediate/nm_with_gender_1.csv")
+write.csv(name_csv, file = "data_sets/intermediate/nm_with_gender.csv")
 
