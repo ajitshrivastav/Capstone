@@ -1,1 +1,7 @@
 
+Input files directory
+
+primary :- Containing the primary input data file-> SF Salary
+
+misc :- Miscellaneous input files that is used for data cleanup, gender evaluation, race evaluation
+
