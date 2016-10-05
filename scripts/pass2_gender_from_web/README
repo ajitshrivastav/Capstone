@@ -1,1 +1,8 @@
 
+Scripts to evaluate gender for all the names that were left out after pass1
+
+-> Idea is to extract all the unique first names(for whom gender evaluation is to be done)  from the main input file and store it in a different (data_sets/intermediate/nm_wihout_gender.csv). This is done using extract_fn_invalid_gender.R
+
+-> Then use get_gender_from_web.R to get gender for all the names from WEB (REST API) and store it in a intermediate file data_sets/intermediate/nm_with_gender_out.csv
+
+-> Later use data_sets/intermediate/nm_with_gender_out.csv to populate gender in the main input file
