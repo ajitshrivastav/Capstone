@@ -1,1 +1,7 @@
 
+Data source from monga_bay :- http://names.mongabay.com/
+
+Last Name , Race extracted in .txt file
+
+Also captured rank_percent, so that race prediction is more accurate
+Ex :- 'smith' as a surname are found in both Whites and AfricanAmerican, but 22.2 percent of all 'smith''s are identified as AfricanAmerican where as 73.3 percent of all 'smith''s are identified as Whites. Hence race is evaluated as 'White' for 'smith' rather that AfricanAmerican
