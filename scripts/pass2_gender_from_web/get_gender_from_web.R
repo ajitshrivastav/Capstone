@@ -21,9 +21,12 @@ findgender_web <- function(first_name_in, gender_in, start_index, end_index){
     }
     
     # invoke REST call to evaluate Gender
-    url_string <- paste("https://api.genderize.io/?name=",first_name_in[idx],sep="")
-    #url_string <- paste("https://gender-api.com/get?key=cGVLPhBfVJnXhggBgm&name=",first_name[idx],sep="")
+    #url_string <- paste("https://api.genderize.io/?name=",first_name_in[idx],sep="")
+    #url_string <- paste("https://gender-api.com/get?key=cGVLPhBfVJnXhggBgm&name=",first_name_in[idx],sep="")
+    url_string <- paste("http://api.namsor.com/onomastics/api/json/gendre/:",first_name_in[idx],"/:",first_name_in[idx],"/:countryIso2",sep="")
+    print(paste("URL getting invoked -",url_string))
     person_info = getURL(url_string)
+    print(paste("Response -",person_info))
     if (class(person_info) == "try-error") {
       gender[idx] <- NA
     } else{
@@ -45,6 +48,6 @@ findgender_web <- function(first_name_in, gender_in, start_index, end_index){
 }
 
 name_csv <- read.csv("data_sets/intermediate/nm_wihout_gender.csv")
-name_csv <- name_csv %>% mutate(gender=findgender_web(nm_v, gender,1, 499))
-write.csv(name_csv, file = "data_sets/intermediate/nm_with_gender.csv")
+name_csv <- name_csv %>% mutate(gender=findgender_web(nm_v, gender,1, 4000))
+write.csv(name_csv, file = "data_sets/intermediate/nm_with_gender_out.csv")
 
