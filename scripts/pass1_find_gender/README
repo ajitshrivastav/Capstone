@@ -1,1 +1,6 @@
 
+pass_1_gender.R takes processes initial data cleanup and gender evaluation
+
+-> Cleanup and segregate first name / last name
+
+-> Based on usprocessed_names.csv and ukprocessed_names.csv, evaluate gender
