@@ -3,8 +3,9 @@ library(stringr)
 library('RCurl')
 library('rjson')
 
-# method that invokes REST api call (https://api.genderize.io/) to evaluate gender
-# API sets a limit of 500 calls per day, hence pass the start index & end index, to invoke REST max 500 times
+# method that invokes REST api call (https://api.genderize.io/) to evaluate gender (not used anymore)
+# API sets a limit of 500 calls per day, hence pass the start index & end index, to invoke REST max 500 times (not used anymore)
+# use new API where there is no limit - http://api.namsor.com/onomastics/api
 findgender_web <- function(first_name_in, gender_in, start_index, end_index){
   gender <- c()
   for(idx in 1:length(first_name_in)){
