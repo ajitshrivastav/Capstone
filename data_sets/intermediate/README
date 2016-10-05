@@ -1,1 +1,13 @@
 
+Store all intermediate files here
+
+pass1_gender_salary.csv -> File capturing gender after 1st pass, scripts/pass1_find_gender/pass1_gender.R outputs the file
+
+nm_wihout_gender.csv -> Extracted all the unique names from pass1_gender_salary.csv for which gender evaluation did not succeed (script - scripts/pass2_gender_from_web/extract_fn_invalid_gender.R)
+
+nm_with_gender_out.csv -> Evaluate gender for all the names in nm_wihout_gender.csv using REST API call (script - scripts/pass2_gender_from_web/get_gender_from_web.R)
+
+tmp_race_salary.csv -> Evaluated race in first pass, 
+i/p -> pass1_gender_salary.csv
+script -> scripts/find_race/eval_race.R
+data sets used -> data_sets/input/misc/monga_bay/*.csv
